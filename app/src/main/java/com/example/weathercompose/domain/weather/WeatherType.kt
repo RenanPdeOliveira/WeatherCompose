@@ -1,6 +1,7 @@
-package com.example.weathercompose
+package com.example.weathercompose.domain.weather
 
 import androidx.annotation.DrawableRes
+import com.example.weathercompose.R
 
 sealed class WeatherType(
     val description: String,
