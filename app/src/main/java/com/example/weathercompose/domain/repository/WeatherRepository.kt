@@ -5,5 +5,5 @@ import com.example.weathercompose.domain.weather.WeatherInfo
 
 interface WeatherRepository {
 
-    suspend fun getWeatherData(lat: Double, long: Double): Resource<WeatherInfo>
+    suspend fun getWeatherData(lat: String, long: String): Resource<WeatherInfo>
 }
