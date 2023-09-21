@@ -30,6 +30,7 @@ import kotlin.math.roundToInt
 @Composable
 fun WeatherCard(
     state: WeatherState,
+    cityState: CityState,
     backgroundColor: CardColors,
     modifier: Modifier = Modifier
 ) {
@@ -45,14 +46,21 @@ fun WeatherCard(
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    text = "Today ${
-                        data.time.format(DateTimeFormatter.ofPattern("HH:mm"))
-                    }",
-                    modifier = modifier
-                        .align(Alignment.End),
-                    color = Color.White
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = cityState.city,
+                        color = Color.White
+                    )
+                    Text(
+                        text = "Today ${
+                            data.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+                        }",
+                        color = Color.White
+                    )
+                }
                 Spacer(modifier = modifier.height(16.dp))
                 Image(
                     painter = painterResource(id = data.weatherType.icon),
@@ -71,7 +79,7 @@ fun WeatherCard(
                     fontSize = 22.sp,
                     color = Color.White
                 )
-                Spacer(modifier = modifier.height(16.dp))
+                Spacer(modifier = modifier.height(32.dp))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
