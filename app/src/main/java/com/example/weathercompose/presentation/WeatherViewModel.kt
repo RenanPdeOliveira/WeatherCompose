@@ -32,9 +32,6 @@ class WeatherViewModel @Inject constructor(
     private var _searchText = MutableStateFlow("")
     val searchText = _searchText.asStateFlow()
 
-    private var _isLoading = MutableStateFlow(false)
-    val isLoading = _isLoading.asStateFlow()
-
     private var _listOfCities = MutableStateFlow(cities)
     val listOfCities = searchText.combine(_listOfCities) { text, cities ->
         if (text.isBlank()) {
@@ -74,7 +71,7 @@ class WeatherViewModel @Inject constructor(
                     state = state.copy(
                         weatherInfo = null,
                         isLoading = false,
-                        error = result.message
+                        error = "Could not load weather data. Make sure to enable internet!"
                     )
                 }
             }
