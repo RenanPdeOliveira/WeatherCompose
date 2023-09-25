@@ -1,6 +1,5 @@
 package com.example.weathercompose.presentation
 
-import com.example.weathercompose.domain.weather.WeatherInfo
 
 data class CityState(
     var city: String = "São Paulo",
