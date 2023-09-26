@@ -19,6 +19,8 @@ Weather compose is a project where I can demonstrate some of my skills using Jet
 * Dependency Injection
   * Dagger-hilt
 * Coroutines
+* Splashscreen
+* Shimmer loading
 * Empty state for no internet connection
 * UI Compose Components
     * Box
